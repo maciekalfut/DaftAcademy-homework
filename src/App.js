@@ -25,6 +25,13 @@ function App() {
         >
           Learn React
         </a>
+        <a
+          className="App-link"
+          href="https://github.com/maciekalfut/DaftAcademy-homework"
+          target="_blank"
+          rel="noopener noreferrer">
+          github
+        </a>
       </header>
     </div>
   );
