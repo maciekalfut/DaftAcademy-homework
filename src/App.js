@@ -10,10 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={OpenAlert}>Klik</button>
-
-
-
+         <button onClick={OpenAlert}>Klik</button>      
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -30,7 +27,7 @@ function App() {
           href="https://github.com/maciekalfut/DaftAcademy-homework"
           target="_blank"
           rel="noopener noreferrer">
-          github
+          GitHub link
         </a>
       </header>
     </div>
