@@ -1,37 +1,46 @@
-import logo from './logo.svg';
+
 import './App.css';
-const OpenAlert = () => 
-{
-  alert("hello react!!!!!!!!!!!")
-}
+import { useForm } from "react-hook-form";
 
 function App() {
+const { register, handleSubmit, formState:{errors}} = useForm();
+
+const onSubmit = (data) => {
+  console.log(data);
+}
+// console.log(errors)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-         <button onClick={OpenAlert}>Klik</button>      
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a
-          className="App-link"
-          href="https://github.com/maciekalfut/DaftAcademy-homework"
-          target="_blank"
-          rel="noopener noreferrer">
-          GitHub link
-        </a>
-      </header>
+    <div className='container'>    
+     <form onSubmit={handleSubmit(onSubmit)} >
+     <h2>Register</h2>
+     <div className='ui divider'></div>
+     <div className='field'>
+       <label>Username</label><br/>
+       <input type="text" name="Username" placeholder='Username'
+        {...register("name",{required:"Please enter username",
+      minLength:{
+        value: 3,
+        message: "Username is too short"
+      },
+      maxLength:{
+        value:20,
+        message: "Username is too long"
+      }
+    })}  
+        />
+        {errors.name &&(<small className="blad">{errors.name.message}</small> ) }
+     </div>
+     <br/>
+     <div className='przycisk'>
+       <button className='przycisk'>Submit</button>
+     </div>
+     </form>
     </div>
   );
-}
+  }
+
+
+
 
 export default App;
