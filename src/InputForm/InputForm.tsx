@@ -3,6 +3,7 @@ import {useState, useEffect, useCallback} from "react";
 
 interface InputFormProps {
     defaultValue?: string;
+    props?: string;
 }
 
 const storageFormKey = 'inputValue';
@@ -47,7 +48,7 @@ export const InputForm = (props?: InputFormProps) => {
             valueToSet = localStorageData;
         } else {
             if (!!props?.defaultValue) {
-                valueToSet = props?.defaultValue;
+                valueToSet = props.defaultValue;
             }
         }
 
